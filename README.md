@@ -21,3 +21,8 @@ If you're satisfied with the plan, run terraform apply to create the infrastruct
 After the infrastructure is created, you can log in to the EC2 instance using the key pair you created during the Terraform apply process.
 How to Connect to the App
 Open the AWS Management Console and navigate to the EC2 Dashboard.
+ 
+ <p align="center">
+  <img src="https://files.oaiusercontent.com/file-DYW5cfT3A3VYg5pLZv5YszmU?se=2024-09-16T21%3A33%3A59Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D502be4e9-18b3-49a0-8761-d4c57956d81b.webp&sig=To7q/Xz%2BUbJf4OR0EijwyYv6JUqKTzeymyV7VyVR9FU%3D">
+</p>
+
