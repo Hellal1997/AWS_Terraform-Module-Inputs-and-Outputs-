@@ -2,7 +2,7 @@
 
 
 
-<img width="535" alt="Q" src="https://github.com/Hellal1997/AWS_Terraform-Module-Inputs-and-Outputs-/blob/096cca1476064a0e8f8ea86ca786b8a03ee543a8/terraform%20lab%20.png">
+<img width="535" alt="Q" src="https://github.com/mohamedesmael10/terraform-aws-project/blob/main/Shots/1.jpeg?raw=true">
 This repository contains Terraform code that deploys a high secure app on AWS. The app includes an EC2 instance running Ubuntu 20.04, a VPC with public and private subnets, and security groups that allow inbound traffic to the app only from specific IP addresses.
 
 ## Prerequisites
