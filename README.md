@@ -51,6 +51,55 @@ This project sets up a secure, scalable cloud infrastructure using AWS services.
 ## Architecture Diagram
 
 
-<img width="535" alt="Q" src="https://github.com/mohamedesmael10/terraform-aws-project/blob/main/Shots/1.jpeg?raw=true">
+<img width="535" alt="Q" src="https://github.com/Hellal1997/AWS_Terraform-Module-Inputs-and-Outputs-/blob/main/Screenshot%20from%202024-09-20%2003-00-51.png?raw=true">
 This repository contains Terraform code that deploys a high secure app on AWS. The app includes an EC2 instance running Ubuntu 20.04, a VPC with public and private subnets, and security groups that allow inbound traffic to the app only from specific IP addresses.
+
+How to Connect
+
+    SSH to Bastion Host:
+        Use the Bastion Host to securely connect to the private Nginx servers.
+
+    Access Nginx Servers:
+        Once connected to the Bastion Host, you can SSH into the Nginx servers located in the private subnets for management and maintenance.
+
+Benefits
+
+    Security:
+        The private subnets isolate sensitive resources.
+        The NAT Gateway restricts outbound internet access for private instances while allowing them to fetch updates.
+
+    Scalability:
+        Additional Nginx instances can be added to the private subnets, and the Load Balancer will automatically distribute traffic.
+
+    Manageability:
+        The Bastion Host allows secure administration of the private instances without exposing them directly to the internet.
+
+Getting Started
+1. Install Terraform
+
+    Download and install Terraform from Terraform Downloads.
+
+2. Configure Cloud Provider Credentials
+
+    Ensure your AWS credentials are properly configured on your machine.
+
+3. Review Terraform Code
+
+    Review the Terraform modules and configuration files to understand how each component is deployed.
+
+4. Set Variables
+
+    Edit terraform.tfvars with appropriate values, such as project name, AMI ID, and instance types.
+
+5. Initialize Terraform
+
+    Run terraform init to initialize the Terraform project.
+
+6. Plan the Infrastructure
+
+    Run terraform plan to preview the infrastructure changes.
+
+7. Deploy the Infrastructure
+
+    Run terraform apply to create the infrastructure on AWS.
 
