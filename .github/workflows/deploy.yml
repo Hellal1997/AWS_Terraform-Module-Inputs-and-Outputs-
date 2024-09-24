@@ -20,4 +20,4 @@ jobs:
         with:
           context: DockerFileFolder/
           push: true
-          tags: mohamedhellal/my-image:latest
+          tags: mohamedhellal/terraformproject:tagname
