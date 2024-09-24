@@ -17,3 +17,4 @@ output "nat_gateway_id" {
   description = "The ID of the NAT Gateway."
   value       = module.nat_gateway.nat_gw_id
 }
+
