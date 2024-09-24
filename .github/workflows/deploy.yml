@@ -1,24 +1,23 @@
-name: CI Pipeline
+name: Build and Push Docker image to Docker Hub
 
-on:
-  push:
-    branches: [ "main" ]
-
+on: push
 jobs:
-
-  build:
-
+  push_to_registry:
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Login Dockerhub
-      env:
-        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - name: Check out the repo
+        uses: actions/checkout@v3
       
-    - name: Build the Docker image
-      run: docker build -t mohamedhellal/terraformproject .
-    - name: Push to Dockerhub
-      run: docker push mohamedhellal/terraformproject:latest
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+    
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: DockerFileFolder/
+          push: true
+          tags: mohamedhellal/terraformproject:latest
