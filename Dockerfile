@@ -1,19 +1,16 @@
-FROM node:16
+# Use an official base image
+FROM ubuntu:22.04
 
-# Create app directory
-WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
+# Copy the application files
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+# Install dependencies (if needed)
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Command to run the application
+CMD ["bash"]
